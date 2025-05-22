@@ -1,0 +1,98 @@
+/* Recipe Slider Animations */
+.recipe-card {
+  transition: all 0.3s ease-in-out;
+}
+
+.recipe-card:hover {
+  transform: translateY(-10px);
+}
+
+.recipe-image {
+  transition: transform 0.5s ease;
+}
+
+.recipe-card:hover .recipe-image {
+  transform: scale(1.1);
+}
+
+.slider-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.slider-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 500ms, transform 500ms;
+}
+
+.slider-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slider-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 500ms, transform 500ms;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.recipe-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.recipe-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.recipe-card:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+/* Pulse animation for the dots */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.active-dot {
+  animation: pulse 2s infinite;
+}
+
+/* Slide animation */
+@keyframes slide {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slide 0.5s ease-out forwards;
+}

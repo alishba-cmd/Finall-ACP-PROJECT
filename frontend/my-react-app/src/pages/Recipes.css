@@ -1,0 +1,122 @@
+/* Recipes page animations */
+.recipe-card {
+  animation: fadeIn 0.5s ease-out forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animation delay for cards */
+.recipe-card:nth-child(1) { animation-delay: 0.05s; }
+.recipe-card:nth-child(2) { animation-delay: 0.1s; }
+.recipe-card:nth-child(3) { animation-delay: 0.15s; }
+
+/* Image hover effect */
+.recipe-image {
+  transition: transform 0.5s ease;
+  overflow: hidden;
+}
+
+.recipe-card:hover .recipe-image img {
+  transform: scale(1.1);
+}
+
+/* Difficulty badge animation */
+.difficulty-badge {
+  transition: all 0.3s ease;
+}
+
+.recipe-card:hover .difficulty-badge {
+  transform: scale(1.1);
+}
+
+/* Page title animation */
+.page-title {
+  animation: slideDown 0.8s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Page description animation */
+.page-description {
+  animation: fadeIn 1s ease-out 0.3s forwards;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Filter section animation */
+.filter-section {
+  animation: fadeIn 0.5s ease-out 0.2s forwards;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Recipes list animation */
+.recipes-list {
+  animation: fadeIn 0.5s ease-out 0.4s forwards;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Pagination animation */
+.pagination {
+  animation: fadeIn 0.5s ease-out 0.6s forwards;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Button hover effects */
+.pagination button:not([disabled]):hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+/* Active page button pulse */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(248, 113, 113, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(248, 113, 113, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(248, 113, 113, 0);
+  }
+}
+
+.pagination button.active {
+  animation: pulse 2s infinite;
+}
+
+/* Filter transition */
+select {
+  transition: all 0.3s ease;
+}
+
+select:focus {
+  border-color: #f87171;
+  box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.2);
+}
